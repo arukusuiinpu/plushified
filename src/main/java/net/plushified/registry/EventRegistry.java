@@ -1,6 +1,6 @@
 package net.plushified.registry;
 
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -13,9 +13,9 @@ import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.LootTableEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.LootNumberProvider;
-import net.minecraft.loot.provider.number.StorageLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
 import net.plushified.Plushified;
 
 import java.sql.Array;
@@ -26,7 +26,7 @@ import static net.plushified.registry.BlockRegistry.*;
 
 public class EventRegistry {
 
-    public static List<RegistryKey<LootTable>> LOOT_TABLES = new ArrayList<RegistryKey<LootTable>>();
+    public static List<Identifier> LOOT_TABLES = new ArrayList<Identifier>();
 
     private static void addNecessaryLootTables() {
         LOOT_TABLES.add(LootTables.SPAWN_BONUS_CHEST);
@@ -79,7 +79,6 @@ public class EventRegistry {
         LOOT_TABLES.add(LootTables.STRONGHOLD_LIBRARY_CHEST);
         LOOT_TABLES.add(LootTables.TRAIL_RUINS_COMMON_ARCHAEOLOGY);
         LOOT_TABLES.add(LootTables.TRAIL_RUINS_RARE_ARCHAEOLOGY);
-        LOOT_TABLES.add(LootTables.TRIAL_CHAMBERS_INTERSECTION_BARREL_CHEST);
         LOOT_TABLES.add(LootTables.UNDERWATER_RUIN_BIG_CHEST);
         LOOT_TABLES.add(LootTables.UNDERWATER_RUIN_SMALL_CHEST);
         LOOT_TABLES.add(LootTables.VILLAGE_ARMORER_CHEST);
@@ -115,9 +114,9 @@ public class EventRegistry {
 
     }
 
-    public static void addItemToLootTable(RegistryKey<LootTable> tableId, Item item, Integer weight) {
-        LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
-            if (source.isBuiltin() && tableId.equals(key)) {
+    public static void addItemToLootTable(Identifier tableId, Item item, Integer weight) {
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (tableId.equals(id)) {
                 tableBuilder.modifyPools(poolBuilder -> poolBuilder.with(ItemEntry.builder(item).conditionally(RandomChanceLootCondition.builder(0.005f)).weight(weight)));
             }
         });

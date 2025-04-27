@@ -19,6 +19,8 @@ public class PlushifiedDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModelGenerator::new);
 		pack.addProvider(RecipeGenerator::new);
 
+
+
 		Plushified.LOGGER.info("OMG! Initializing Translations...");
 
 		pack.addProvider(EnglishTranslationGenerator::new);

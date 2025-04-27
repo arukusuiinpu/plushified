@@ -28,11 +28,12 @@
 			"environment": "client"
 		}
 	],
+	"accessWidener": "plushified.accesswidener",
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
-		"java": ">=21",
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
 		"fabric-api": "*",
-		"geckolib": "4.5.6"
+		"geckolib": ">=4.4.9"
 	}
 }

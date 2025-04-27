@@ -12,12 +12,12 @@ import java.util.concurrent.CompletableFuture;
 import static net.plushified.registry.BlockRegistry.*;
 
 public class EnglishTranslationGenerator extends FabricLanguageProvider {
-    public EnglishTranslationGenerator(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+    public EnglishTranslationGenerator(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(ALEXNOMPE_PLUSHIE, "AlexNompe plushie");
         translationBuilder.add(fourCVIT_PLUSHIE, "4cvit plushie");
         translationBuilder.add(ALCEST_M_PLUSHIE, "Alcest_m plushie");

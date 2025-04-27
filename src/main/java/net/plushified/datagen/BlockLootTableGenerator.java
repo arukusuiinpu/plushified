@@ -9,8 +9,8 @@ import java.util.concurrent.CompletableFuture;
 import static net.plushified.registry.BlockRegistry.*;
 
 public class BlockLootTableGenerator extends FabricBlockLootTableProvider {
-    public BlockLootTableGenerator(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+    public BlockLootTableGenerator(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override

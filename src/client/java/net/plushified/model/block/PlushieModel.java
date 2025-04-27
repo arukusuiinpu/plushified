@@ -6,7 +6,7 @@ import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.util.Identifier;
 import net.plushified.Plushified;
 import net.plushified.block.entity.PlushieBlockEntity;
-import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 
 public class PlushieModel<T extends GeoAnimatable> extends GeoModel<T> {

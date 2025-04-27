@@ -2,6 +2,7 @@ package net.plushified.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -19,6 +20,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.plushified.Plushified;
 import net.plushified.block.*;
+
+import net.minecraft.block.*;
 import net.plushified.block.entity.PlushieBlockEntity;
 import net.plushified.registry.BlockEntityRegistry.*;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +31,7 @@ import static net.plushified.registry.BlockEntityRegistry.*;
 import static net.plushified.registry.SoundEventRegistry.*;
 
 public class BlockRegistry {
-
+   
     public static final Block ALEXNOMPE_PLUSHIE = new Plushie(Block.Settings.create().strength(1.0f).sounds(PLUSHIE_SOUND_GROUP)) {
         @Override
         public @NotNull BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -37,7 +40,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ALEXNOMPE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ALEXNOMPE_PLUSHIE_BLOCK_ENTITY,
                     AlexNompePlushieBlockEntity::tick);
         }
     };
@@ -49,7 +52,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, fourCVIT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, fourCVIT_PLUSHIE_BLOCK_ENTITY,
                     fourcvitPlushieBlockEntity::tick);
         }
     };
@@ -61,7 +64,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ALCEST_M_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ALCEST_M_PLUSHIE_BLOCK_ENTITY,
                     Alcest_mPlushieBlockEntity::tick);
         }
     };
@@ -73,7 +76,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ALFEDOV_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ALFEDOV_PLUSHIE_BLOCK_ENTITY,
                     AlfedovPlushieBlockEntity::tick);
         }
     };
@@ -85,7 +88,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ALTTERA__PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ALTTERA__PLUSHIE_BLOCK_ENTITY,
                     Alttera_PlushieBlockEntity::tick);
         }
     };
@@ -97,7 +100,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ANTFROST_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ANTFROST_PLUSHIE_BLOCK_ENTITY,
                     AntfrostPlushieBlockEntity::tick);
         }
     };
@@ -109,7 +112,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ARATHAIN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ARATHAIN_PLUSHIE_BLOCK_ENTITY,
                     ArathainPlushieBlockEntity::tick);
         }
     };
@@ -121,7 +124,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ARLABUS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ARLABUS_PLUSHIE_BLOCK_ENTITY,
                     ArlabusPlushieBlockEntity::tick);
         }
     };
@@ -133,7 +136,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ARUYUKI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ARUYUKI_PLUSHIE_BLOCK_ENTITY,
                     AruyukiPlushieBlockEntity::tick);
         }
     };
@@ -145,7 +148,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ASAI_HATSUYO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ASAI_HATSUYO_PLUSHIE_BLOCK_ENTITY,
                     Asai_hatsuyoPlushieBlockEntity::tick);
         }
     };
@@ -157,7 +160,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ASHSWAGG_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ASHSWAGG_PLUSHIE_BLOCK_ENTITY,
                     AshswaggPlushieBlockEntity::tick);
         }
     };
@@ -169,7 +172,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, AWESAMDUDE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, AWESAMDUDE_PLUSHIE_BLOCK_ENTITY,
                     AwesamdudePlushieBlockEntity::tick);
         }
     };
@@ -181,7 +184,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BACONNWAFFLESzero_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BACONNWAFFLESzero_PLUSHIE_BLOCK_ENTITY,
                     BaconnwaffleszeroPlushieBlockEntity::tick);
         }
     };
@@ -193,7 +196,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BADBOYHALO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BADBOYHALO_PLUSHIE_BLOCK_ENTITY,
                     BadboyhaloPlushieBlockEntity::tick);
         }
     };
@@ -205,7 +208,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BARSIGOLD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BARSIGOLD_PLUSHIE_BLOCK_ENTITY,
                     BarsigoldPlushieBlockEntity::tick);
         }
     };
@@ -217,7 +220,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BEZ_LS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BEZ_LS_PLUSHIE_BLOCK_ENTITY,
                     Bez_lsPlushieBlockEntity::tick);
         }
     };
@@ -229,7 +232,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BLACKHOLE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BLACKHOLE_PLUSHIE_BLOCK_ENTITY,
                     BlackholePlushieBlockEntity::tick);
         }
     };
@@ -241,7 +244,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BRANZYCRAFT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BRANZYCRAFT_PLUSHIE_BLOCK_ENTITY,
                     BranzycraftPlushieBlockEntity::tick);
         }
     };
@@ -253,7 +256,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BRIM_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BRIM_PLUSHIE_BLOCK_ENTITY,
                     BrimPlushieBlockEntity::tick);
         }
     };
@@ -265,7 +268,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CAPTAINPUFFY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CAPTAINPUFFY_PLUSHIE_BLOCK_ENTITY,
                     CaptainpuffyPlushieBlockEntity::tick);
         }
     };
@@ -277,7 +280,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CAPXENOMORPH_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CAPXENOMORPH_PLUSHIE_BLOCK_ENTITY,
                     CapxenomorphPlushieBlockEntity::tick);
         }
     };
@@ -289,7 +292,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CHECKGOODMAN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CHECKGOODMAN_PLUSHIE_BLOCK_ENTITY,
                     CheckgoodmanPlushieBlockEntity::tick);
         }
     };
@@ -301,7 +304,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CHIEFXD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CHIEFXD_PLUSHIE_BLOCK_ENTITY,
                     ChiefxdPlushieBlockEntity::tick);
         }
     };
@@ -313,7 +316,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CLOWNPIERCE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CLOWNPIERCE_PLUSHIE_BLOCK_ENTITY,
                     ClownpiercePlushieBlockEntity::tick);
         }
     };
@@ -325,7 +328,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CONNOREATSPANTS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CONNOREATSPANTS_PLUSHIE_BLOCK_ENTITY,
                     ConnoreatspantsPlushieBlockEntity::tick);
         }
     };
@@ -337,7 +340,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DEB_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DEB_PLUSHIE_BLOCK_ENTITY,
                     DebPlushieBlockEntity::tick);
         }
     };
@@ -349,7 +352,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DERAPCHU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DERAPCHU_PLUSHIE_BLOCK_ENTITY,
                     DerapchuPlushieBlockEntity::tick);
         }
     };
@@ -361,7 +364,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DIAMKEY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DIAMKEY_PLUSHIE_BLOCK_ENTITY,
                     DiamkeyPlushieBlockEntity::tick);
         }
     };
@@ -373,7 +376,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DIANSU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DIANSU_PLUSHIE_BLOCK_ENTITY,
                     DiansuPlushieBlockEntity::tick);
         }
     };
@@ -385,7 +388,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DLZ_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DLZ_PLUSHIE_BLOCK_ENTITY,
                     DlzPlushieBlockEntity::tick);
         }
     };
@@ -397,7 +400,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DOCTORfourT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DOCTORfourT_PLUSHIE_BLOCK_ENTITY,
                     DoctorfourtPlushieBlockEntity::tick);
         }
     };
@@ -409,7 +412,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DREAM_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DREAM_PLUSHIE_BLOCK_ENTITY,
                     DreamPlushieBlockEntity::tick);
         }
     };
@@ -421,7 +424,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DURAWKA_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DURAWKA_PLUSHIE_BLOCK_ENTITY,
                     DurawkaPlushieBlockEntity::tick);
         }
     };
@@ -433,7 +436,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DUSHENKA__PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DUSHENKA__PLUSHIE_BLOCK_ENTITY,
                     Dushenka_PlushieBlockEntity::tick);
         }
     };
@@ -445,7 +448,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, EBONI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, EBONI_PLUSHIE_BLOCK_ENTITY,
                     EboniPlushieBlockEntity::tick);
         }
     };
@@ -457,7 +460,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ECORRIDOR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ECORRIDOR_PLUSHIE_BLOCK_ENTITY,
                     EcorridorPlushieBlockEntity::tick);
         }
     };
@@ -469,7 +472,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, EIGHTSIDEDSQUARE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, EIGHTSIDEDSQUARE_PLUSHIE_BLOCK_ENTITY,
                     EightsidedsquarePlushieBlockEntity::tick);
         }
     };
@@ -481,7 +484,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ERET_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ERET_PLUSHIE_BLOCK_ENTITY,
                     EretPlushieBlockEntity::tick);
         }
     };
@@ -493,7 +496,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FARADEY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FARADEY_PLUSHIE_BLOCK_ENTITY,
                     FaradeyPlushieBlockEntity::tick);
         }
     };
@@ -505,7 +508,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FELIKTON_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FELIKTON_PLUSHIE_BLOCK_ENTITY,
                     FeliktonPlushieBlockEntity::tick);
         }
     };
@@ -517,7 +520,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FEREDEN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FEREDEN_PLUSHIE_BLOCK_ENTITY,
                     FeredenPlushieBlockEntity::tick);
         }
     };
@@ -529,7 +532,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FINEK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FINEK_PLUSHIE_BLOCK_ENTITY,
                     FinekPlushieBlockEntity::tick);
         }
     };
@@ -541,7 +544,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FLAMEFRAGS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FLAMEFRAGS_PLUSHIE_BLOCK_ENTITY,
                     FlamefragsPlushieBlockEntity::tick);
         }
     };
@@ -553,7 +556,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FOOLISH_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FOOLISH_PLUSHIE_BLOCK_ENTITY,
                     FoolishPlushieBlockEntity::tick);
         }
     };
@@ -565,7 +568,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FUNDY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FUNDY_PLUSHIE_BLOCK_ENTITY,
                     FundyPlushieBlockEntity::tick);
         }
     };
@@ -577,7 +580,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GEL_MO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GEL_MO_PLUSHIE_BLOCK_ENTITY,
                     Gel_moPlushieBlockEntity::tick);
         }
     };
@@ -589,7 +592,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GEORGENOTFOUND_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GEORGENOTFOUND_PLUSHIE_BLOCK_ENTITY,
                     GeorgenotfoundPlushieBlockEntity::tick);
         }
     };
@@ -601,7 +604,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GOOSE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GOOSE_PLUSHIE_BLOCK_ENTITY,
                     GoosePlushieBlockEntity::tick);
         }
     };
@@ -613,7 +616,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, HANNAHXXROSE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, HANNAHXXROSE_PLUSHIE_BLOCK_ENTITY,
                     HannahxxrosePlushieBlockEntity::tick);
         }
     };
@@ -625,7 +628,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, HAYDone__PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, HAYDone__PLUSHIE_BLOCK_ENTITY,
                     Haydone_PlushieBlockEntity::tick);
         }
     };
@@ -637,7 +640,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, HBOMBninefour_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, HBOMBninefour_PLUSHIE_BLOCK_ENTITY,
                     HbombninefourPlushieBlockEntity::tick);
         }
     };
@@ -649,7 +652,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, HREL_MC_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, HREL_MC_PLUSHIE_BLOCK_ENTITY,
                     Hrel_mcPlushieBlockEntity::tick);
         }
     };
@@ -661,7 +664,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, INAGGY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, INAGGY_PLUSHIE_BLOCK_ENTITY,
                     InaggyPlushieBlockEntity::tick);
         }
     };
@@ -673,7 +676,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JACKMANIFOLD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JACKMANIFOLD_PLUSHIE_BLOCK_ENTITY,
                     JackmanifoldPlushieBlockEntity::tick);
         }
     };
@@ -685,7 +688,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JAY_POKERMAN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JAY_POKERMAN_PLUSHIE_BLOCK_ENTITY,
                     Jay_pokermanPlushieBlockEntity::tick);
         }
     };
@@ -697,7 +700,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JEPEXX_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JEPEXX_PLUSHIE_BLOCK_ENTITY,
                     JepexxPlushieBlockEntity::tick);
         }
     };
@@ -709,7 +712,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JEREMI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JEREMI_PLUSHIE_BLOCK_ENTITY,
                     JeremiPlushieBlockEntity::tick);
         }
     };
@@ -721,7 +724,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JUMPERWHO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JUMPERWHO_PLUSHIE_BLOCK_ENTITY,
                     JumperwhoPlushieBlockEntity::tick);
         }
     };
@@ -733,7 +736,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JUSTKABOODLE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JUSTKABOODLE_PLUSHIE_BLOCK_ENTITY,
                     JustkaboodlePlushieBlockEntity::tick);
         }
     };
@@ -745,7 +748,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JUST_S_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JUST_S_PLUSHIE_BLOCK_ENTITY,
                     Just_sPlushieBlockEntity::tick);
         }
     };
@@ -757,7 +760,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KADOTANUKLES_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KADOTANUKLES_PLUSHIE_BLOCK_ENTITY,
                     KadotanuklesPlushieBlockEntity::tick);
         }
     };
@@ -769,7 +772,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KARLJACOBS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KARLJACOBS_PLUSHIE_BLOCK_ENTITY,
                     KarljacobsPlushieBlockEntity::tick);
         }
     };
@@ -781,7 +784,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KAVKIN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KAVKIN_PLUSHIE_BLOCK_ENTITY,
                     KavkinPlushieBlockEntity::tick);
         }
     };
@@ -793,7 +796,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KETRINCYST_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KETRINCYST_PLUSHIE_BLOCK_ENTITY,
                     KetrincystPlushieBlockEntity::tick);
         }
     };
@@ -805,7 +808,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KLASHRAICK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KLASHRAICK_PLUSHIE_BLOCK_ENTITY,
                     KlashraickPlushieBlockEntity::tick);
         }
     };
@@ -817,7 +820,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KLUV_V_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KLUV_V_PLUSHIE_BLOCK_ENTITY,
                     Kluv_vPlushieBlockEntity::tick);
         }
     };
@@ -829,7 +832,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KROLIKMUN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KROLIKMUN_PLUSHIE_BLOCK_ENTITY,
                     KrolikmunPlushieBlockEntity::tick);
         }
     };
@@ -841,7 +844,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, LAMPCAT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, LAMPCAT_PLUSHIE_BLOCK_ENTITY,
                     LampcatPlushieBlockEntity::tick);
         }
     };
@@ -853,7 +856,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, LEOWzeroOK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, LEOWzeroOK_PLUSHIE_BLOCK_ENTITY,
                     LeowzerookPlushieBlockEntity::tick);
         }
     };
@@ -865,7 +868,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, LORDSANTOS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, LORDSANTOS_PLUSHIE_BLOCK_ENTITY,
                     LordsantosPlushieBlockEntity::tick);
         }
     };
@@ -877,7 +880,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, LUX_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, LUX_PLUSHIE_BLOCK_ENTITY,
                     LuxPlushieBlockEntity::tick);
         }
     };
@@ -889,7 +892,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MAGMUSTX_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MAGMUSTX_PLUSHIE_BLOCK_ENTITY,
                     MagmustxPlushieBlockEntity::tick);
         }
     };
@@ -901,7 +904,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MAKAFOLZ_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MAKAFOLZ_PLUSHIE_BLOCK_ENTITY,
                     MakafolzPlushieBlockEntity::tick);
         }
     };
@@ -913,7 +916,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MANEPEAR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MANEPEAR_PLUSHIE_BLOCK_ENTITY,
                     ManepearPlushieBlockEntity::tick);
         }
     };
@@ -925,7 +928,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MAPICC_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MAPICC_PLUSHIE_BLOCK_ENTITY,
                     MapiccPlushieBlockEntity::tick);
         }
     };
@@ -937,7 +940,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MARTSCOMM_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MARTSCOMM_PLUSHIE_BLOCK_ENTITY,
                     MartscommPlushieBlockEntity::tick);
         }
     };
@@ -949,7 +952,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MASK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MASK_PLUSHIE_BLOCK_ENTITY,
                     MaskPlushieBlockEntity::tick);
         }
     };
@@ -961,7 +964,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MICHAELMCCHILL_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MICHAELMCCHILL_PLUSHIE_BLOCK_ENTITY,
                     MichaelmcchillPlushieBlockEntity::tick);
         }
     };
@@ -973,7 +976,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MINUTETECH_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MINUTETECH_PLUSHIE_BLOCK_ENTITY,
                     MinutetechPlushieBlockEntity::tick);
         }
     };
@@ -985,7 +988,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MOoneVINE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MOoneVINE_PLUSHIE_BLOCK_ENTITY,
                     MoonevinePlushieBlockEntity::tick);
         }
     };
@@ -997,7 +1000,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MODDY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MODDY_PLUSHIE_BLOCK_ENTITY,
                     ModdyPlushieBlockEntity::tick);
         }
     };
@@ -1009,7 +1012,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MRCUBEsix_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MRCUBEsix_PLUSHIE_BLOCK_ENTITY,
                     MrcubesixPlushieBlockEntity::tick);
         }
     };
@@ -1021,7 +1024,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MRPUPE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MRPUPE_PLUSHIE_BLOCK_ENTITY,
                     MrpupePlushieBlockEntity::tick);
         }
     };
@@ -1033,7 +1036,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, M_MAFINEV_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, M_MAFINEV_PLUSHIE_BLOCK_ENTITY,
                     M_mafinevPlushieBlockEntity::tick);
         }
     };
@@ -1045,7 +1048,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NAGIBAYKA_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NAGIBAYKA_PLUSHIE_BLOCK_ENTITY,
                     NagibaykaPlushieBlockEntity::tick);
         }
     };
@@ -1057,7 +1060,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NEADAPTAR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NEADAPTAR_PLUSHIE_BLOCK_ENTITY,
                     NeadaptarPlushieBlockEntity::tick);
         }
     };
@@ -1069,7 +1072,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NERKIN__PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NERKIN__PLUSHIE_BLOCK_ENTITY,
                     Nerkin_PlushieBlockEntity::tick);
         }
     };
@@ -1081,7 +1084,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NIHACHU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NIHACHU_PLUSHIE_BLOCK_ENTITY,
                     NihachuPlushieBlockEntity::tick);
         }
     };
@@ -1093,7 +1096,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NIKI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NIKI_PLUSHIE_BLOCK_ENTITY,
                     NikiPlushieBlockEntity::tick);
         }
     };
@@ -1105,7 +1108,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NOVIKONY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NOVIKONY_PLUSHIE_BLOCK_ENTITY,
                     NovikonyPlushieBlockEntity::tick);
         }
     };
@@ -1117,7 +1120,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NUROFEN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NUROFEN_PLUSHIE_BLOCK_ENTITY,
                     NurofenPlushieBlockEntity::tick);
         }
     };
@@ -1129,7 +1132,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, OBSI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, OBSI_PLUSHIE_BLOCK_ENTITY,
                     ObsiPlushieBlockEntity::tick);
         }
     };
@@ -1141,7 +1144,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, OLYACHESAPIK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, OLYACHESAPIK_PLUSHIE_BLOCK_ENTITY,
                     OlyachesapikPlushieBlockEntity::tick);
         }
     };
@@ -1153,7 +1156,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, OPTIMIST_EZZ_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, OPTIMIST_EZZ_PLUSHIE_BLOCK_ENTITY,
                     Optimist_ezzPlushieBlockEntity::tick);
         }
     };
@@ -1165,7 +1168,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PANGI_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PANGI_PLUSHIE_BLOCK_ENTITY,
                     PangiPlushieBlockEntity::tick);
         }
     };
@@ -1177,7 +1180,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PEENTAR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PEENTAR_PLUSHIE_BLOCK_ENTITY,
                     PeentarPlushieBlockEntity::tick);
         }
     };
@@ -1189,7 +1192,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PHILZA_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PHILZA_PLUSHIE_BLOCK_ENTITY,
                     PhilzaPlushieBlockEntity::tick);
         }
     };
@@ -1201,7 +1204,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PLANETLORD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PLANETLORD_PLUSHIE_BLOCK_ENTITY,
                     PlanetlordPlushieBlockEntity::tick);
         }
     };
@@ -1213,7 +1216,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PONK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PONK_PLUSHIE_BLOCK_ENTITY,
                     PonkPlushieBlockEntity::tick);
         }
     };
@@ -1225,7 +1228,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PRINCEZAM_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PRINCEZAM_PLUSHIE_BLOCK_ENTITY,
                     PrincezamPlushieBlockEntity::tick);
         }
     };
@@ -1237,7 +1240,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PURPLED_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PURPLED_PLUSHIE_BLOCK_ENTITY,
                     PurpledPlushieBlockEntity::tick);
         }
     };
@@ -1249,7 +1252,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PWGOOOD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PWGOOOD_PLUSHIE_BLOCK_ENTITY,
                     PwgooodPlushieBlockEntity::tick);
         }
     };
@@ -1261,7 +1264,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, QUACKITY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, QUACKITY_PLUSHIE_BLOCK_ENTITY,
                     QuackityPlushieBlockEntity::tick);
         }
     };
@@ -1273,7 +1276,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, RfourTMAID_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, RfourTMAID_PLUSHIE_BLOCK_ENTITY,
                     RfourtmaidPlushieBlockEntity::tick);
         }
     };
@@ -1285,7 +1288,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, RANBOO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, RANBOO_PLUSHIE_BLOCK_ENTITY,
                     RanbooPlushieBlockEntity::tick);
         }
     };
@@ -1297,7 +1300,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, REDDOONS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, REDDOONS_PLUSHIE_BLOCK_ENTITY,
                     ReddoonsPlushieBlockEntity::tick);
         }
     };
@@ -1309,7 +1312,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, RESOTA_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, RESOTA_PLUSHIE_BLOCK_ENTITY,
                     ResotaPlushieBlockEntity::tick);
         }
     };
@@ -1321,7 +1324,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ROSHAMBOGAMES_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ROSHAMBOGAMES_PLUSHIE_BLOCK_ENTITY,
                     RoshambogamesPlushieBlockEntity::tick);
         }
     };
@@ -1333,7 +1336,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SANHEZ_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SANHEZ_PLUSHIE_BLOCK_ENTITY,
                     SanhezPlushieBlockEntity::tick);
         }
     };
@@ -1345,7 +1348,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SAPNAP_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SAPNAP_PLUSHIE_BLOCK_ENTITY,
                     SapnapPlushieBlockEntity::tick);
         }
     };
@@ -1357,7 +1360,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SBseventhreeseven_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SBseventhreeseven_PLUSHIE_BLOCK_ENTITY,
                     SbseventhreesevenPlushieBlockEntity::tick);
         }
     };
@@ -1369,7 +1372,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SECB_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SECB_PLUSHIE_BLOCK_ENTITY,
                     SecbPlushieBlockEntity::tick);
         }
     };
@@ -1381,7 +1384,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SIRPILIGRIM_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SIRPILIGRIM_PLUSHIE_BLOCK_ENTITY,
                     SirpiligrimPlushieBlockEntity::tick);
         }
     };
@@ -1393,7 +1396,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SKEPPY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SKEPPY_PLUSHIE_BLOCK_ENTITY,
                     SkeppyPlushieBlockEntity::tick);
         }
     };
@@ -1405,7 +1408,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SLOVENOF_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SLOVENOF_PLUSHIE_BLOCK_ENTITY,
                     SlovenofPlushieBlockEntity::tick);
         }
     };
@@ -1417,7 +1420,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SMMASSH_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SMMASSH_PLUSHIE_BLOCK_ENTITY,
                     SmmasshPlushieBlockEntity::tick);
         }
     };
@@ -1429,7 +1432,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SNEEGSNAG_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SNEEGSNAG_PLUSHIE_BLOCK_ENTITY,
                     SneegsnagPlushieBlockEntity::tick);
         }
     };
@@ -1441,7 +1444,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SNRGIRAFFE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SNRGIRAFFE_PLUSHIE_BLOCK_ENTITY,
                     SnrgiraffePlushieBlockEntity::tick);
         }
     };
@@ -1453,7 +1456,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SPEPTICLE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SPEPTICLE_PLUSHIE_BLOCK_ENTITY,
                     SpepticlePlushieBlockEntity::tick);
         }
     };
@@ -1465,7 +1468,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SPOKEISHERE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SPOKEISHERE_PLUSHIE_BLOCK_ENTITY,
                     SpokeisherePlushieBlockEntity::tick);
         }
     };
@@ -1477,7 +1480,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SQUIDDO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SQUIDDO_PLUSHIE_BLOCK_ENTITY,
                     SquiddoPlushieBlockEntity::tick);
         }
     };
@@ -1489,7 +1492,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, STALIN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, STALIN_PLUSHIE_BLOCK_ENTITY,
                     StalinPlushieBlockEntity::tick);
         }
     };
@@ -1501,7 +1504,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TECHNO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TECHNO_PLUSHIE_BLOCK_ENTITY,
                     TechnoPlushieBlockEntity::tick);
         }
     };
@@ -1513,7 +1516,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, THEKLYDE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, THEKLYDE_PLUSHIE_BLOCK_ENTITY,
                     TheklydePlushieBlockEntity::tick);
         }
     };
@@ -1525,7 +1528,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, THETERRAIN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, THETERRAIN_PLUSHIE_BLOCK_ENTITY,
                     TheterrainPlushieBlockEntity::tick);
         }
     };
@@ -1537,7 +1540,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TOMMYINNIT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TOMMYINNIT_PLUSHIE_BLOCK_ENTITY,
                     TommyinnitPlushieBlockEntity::tick);
         }
     };
@@ -1549,7 +1552,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TUBBO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TUBBO_PLUSHIE_BLOCK_ENTITY,
                     TubboPlushieBlockEntity::tick);
         }
     };
@@ -1561,7 +1564,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TUVIKU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TUVIKU_PLUSHIE_BLOCK_ENTITY,
                     TuvikuPlushieBlockEntity::tick);
         }
     };
@@ -1573,7 +1576,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VACMAKAC_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VACMAKAC_PLUSHIE_BLOCK_ENTITY,
                     VacmakacPlushieBlockEntity::tick);
         }
     };
@@ -1585,7 +1588,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VENAZAR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VENAZAR_PLUSHIE_BLOCK_ENTITY,
                     VenazarPlushieBlockEntity::tick);
         }
     };
@@ -1597,7 +1600,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VERYLOUDER_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VERYLOUDER_PLUSHIE_BLOCK_ENTITY,
                     VerylouderPlushieBlockEntity::tick);
         }
     };
@@ -1609,7 +1612,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VIKKSTARonetwothree_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VIKKSTARonetwothree_PLUSHIE_BLOCK_ENTITY,
                     VikkstaronetwothreePlushieBlockEntity::tick);
         }
     };
@@ -1621,7 +1624,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VIPSSS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VIPSSS_PLUSHIE_BLOCK_ENTITY,
                     VipsssPlushieBlockEntity::tick);
         }
     };
@@ -1633,7 +1636,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VMUTED_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VMUTED_PLUSHIE_BLOCK_ENTITY,
                     VmutedPlushieBlockEntity::tick);
         }
     };
@@ -1645,7 +1648,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VORTthreeXDRAGON_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VORTthreeXDRAGON_PLUSHIE_BLOCK_ENTITY,
                     VortthreexdragonPlushieBlockEntity::tick);
         }
     };
@@ -1657,7 +1660,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, WEMMBU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, WEMMBU_PLUSHIE_BLOCK_ENTITY,
                     WemmbuPlushieBlockEntity::tick);
         }
     };
@@ -1669,7 +1672,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, WILBURSOOT_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, WILBURSOOT_PLUSHIE_BLOCK_ENTITY,
                     WilbursootPlushieBlockEntity::tick);
         }
     };
@@ -1681,7 +1684,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, WINSWEEP_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, WINSWEEP_PLUSHIE_BLOCK_ENTITY,
                     WinsweepPlushieBlockEntity::tick);
         }
     };
@@ -1693,7 +1696,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, WOOGIEX_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, WOOGIEX_PLUSHIE_BLOCK_ENTITY,
                     WoogiexPlushieBlockEntity::tick);
         }
     };
@@ -1705,7 +1708,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, YEAH_JARON_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, YEAH_JARON_PLUSHIE_BLOCK_ENTITY,
                     Yeah_jaronPlushieBlockEntity::tick);
         }
     };
@@ -1717,7 +1720,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ZAKVIEL_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ZAKVIEL_PLUSHIE_BLOCK_ENTITY,
                     ZakvielPlushieBlockEntity::tick);
         }
     };
@@ -1729,7 +1732,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ZMEEC_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ZMEEC_PLUSHIE_BLOCK_ENTITY,
                     ZmeecPlushieBlockEntity::tick);
         }
     };
@@ -1741,7 +1744,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ZMEEVIG_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ZMEEVIG_PLUSHIE_BLOCK_ENTITY,
                     ZmeevigPlushieBlockEntity::tick);
         }
     };
@@ -1753,7 +1756,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, _HEO__PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, _HEO__PLUSHIE_BLOCK_ENTITY,
                     _heo_PlushieBlockEntity::tick);
         }
     };
@@ -1765,7 +1768,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, eightONFIRE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, eightONFIRE_PLUSHIE_BLOCK_ENTITY,
                     eightonfirePlushieBlockEntity::tick);
         }
     };
@@ -1777,7 +1780,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ASTRONYU_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ASTRONYU_PLUSHIE_BLOCK_ENTITY,
                     AstronyuPlushieBlockEntity::tick);
         }
     };
@@ -1789,7 +1792,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, BDOUBLEOonezerozero_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, BDOUBLEOonezerozero_PLUSHIE_BLOCK_ENTITY,
                     BdoubleoonezerozeroPlushieBlockEntity::tick);
         }
     };
@@ -1801,7 +1804,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, CUBFANonethreefive_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, CUBFANonethreefive_PLUSHIE_BLOCK_ENTITY,
                     CubfanonethreefivePlushieBlockEntity::tick);
         }
     };
@@ -1813,7 +1816,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DOCMsevenseven_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DOCMsevenseven_PLUSHIE_BLOCK_ENTITY,
                     DocmsevensevenPlushieBlockEntity::tick);
         }
     };
@@ -1825,7 +1828,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FALSESYMMETRY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FALSESYMMETRY_PLUSHIE_BLOCK_ENTITY,
                     FalsesymmetryPlushieBlockEntity::tick);
         }
     };
@@ -1837,7 +1840,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FOWRzero_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FOWRzero_PLUSHIE_BLOCK_ENTITY,
                     FowrzeroPlushieBlockEntity::tick);
         }
     };
@@ -1849,7 +1852,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, FREAKGENIUS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, FREAKGENIUS_PLUSHIE_BLOCK_ENTITY,
                     FreakgeniusPlushieBlockEntity::tick);
         }
     };
@@ -1861,7 +1864,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GEMINITAY_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GEMINITAY_PLUSHIE_BLOCK_ENTITY,
                     GeminitayPlushieBlockEntity::tick);
         }
     };
@@ -1873,7 +1876,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GOODTIMESWITHSCAR_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GOODTIMESWITHSCAR_PLUSHIE_BLOCK_ENTITY,
                     GoodtimeswithscarPlushieBlockEntity::tick);
         }
     };
@@ -1885,7 +1888,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, GRIAN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, GRIAN_PLUSHIE_BLOCK_ENTITY,
                     GrianPlushieBlockEntity::tick);
         }
     };
@@ -1897,7 +1900,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, HYPNOTIZD_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, HYPNOTIZD_PLUSHIE_BLOCK_ENTITY,
                     HypnotizdPlushieBlockEntity::tick);
         }
     };
@@ -1909,7 +1912,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, IJEVIN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, IJEVIN_PLUSHIE_BLOCK_ENTITY,
                     IjevinPlushieBlockEntity::tick);
         }
     };
@@ -1921,7 +1924,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, IMPULSESV_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, IMPULSESV_PLUSHIE_BLOCK_ENTITY,
                     ImpulsesvPlushieBlockEntity::tick);
         }
     };
@@ -1933,7 +1936,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ISKALLeightfive_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ISKALLeightfive_PLUSHIE_BLOCK_ENTITY,
                     IskalleightfivePlushieBlockEntity::tick);
         }
     };
@@ -1945,7 +1948,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, JOEHILLSSAYS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, JOEHILLSSAYS_PLUSHIE_BLOCK_ENTITY,
                     JoehillssaysPlushieBlockEntity::tick);
         }
     };
@@ -1957,7 +1960,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KERALIS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KERALIS_PLUSHIE_BLOCK_ENTITY,
                     KeralisPlushieBlockEntity::tick);
         }
     };
@@ -1969,7 +1972,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, KIRICATTUS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, KIRICATTUS_PLUSHIE_BLOCK_ENTITY,
                     KiricattusPlushieBlockEntity::tick);
         }
     };
@@ -1981,7 +1984,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MORIYASHIINE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MORIYASHIINE_PLUSHIE_BLOCK_ENTITY,
                     MoriyashiinePlushieBlockEntity::tick);
         }
     };
@@ -1993,7 +1996,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, MUMBOJUMBO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, MUMBOJUMBO_PLUSHIE_BLOCK_ENTITY,
                     MumbojumboPlushieBlockEntity::tick);
         }
     };
@@ -2005,7 +2008,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, NOXINTRUS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, NOXINTRUS_PLUSHIE_BLOCK_ENTITY,
                     NoxintrusPlushieBlockEntity::tick);
         }
     };
@@ -2017,7 +2020,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, PEARLESCENTMOON_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, PEARLESCENTMOON_PLUSHIE_BLOCK_ENTITY,
                     PearlescentmoonPlushieBlockEntity::tick);
         }
     };
@@ -2029,7 +2032,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, RENDOG_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, RENDOG_PLUSHIE_BLOCK_ENTITY,
                     RendogPlushieBlockEntity::tick);
         }
     };
@@ -2041,7 +2044,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SILLVIATV_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SILLVIATV_PLUSHIE_BLOCK_ENTITY,
                     SillviatvPlushieBlockEntity::tick);
         }
     };
@@ -2053,7 +2056,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SKIZZLEMAN_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SKIZZLEMAN_PLUSHIE_BLOCK_ENTITY,
                     SkizzlemanPlushieBlockEntity::tick);
         }
     };
@@ -2065,7 +2068,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, SMALLISHBEANS_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, SMALLISHBEANS_PLUSHIE_BLOCK_ENTITY,
                     SmallishbeansPlushieBlockEntity::tick);
         }
     };
@@ -2077,7 +2080,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, STRESSMONSTERonezeroone_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, STRESSMONSTERonezeroone_PLUSHIE_BLOCK_ENTITY,
                     StressmonsteronezeroonePlushieBlockEntity::tick);
         }
     };
@@ -2089,7 +2092,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TALON_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TALON_PLUSHIE_BLOCK_ENTITY,
                     TalonPlushieBlockEntity::tick);
         }
     };
@@ -2101,7 +2104,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, TANGOTEK_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, TANGOTEK_PLUSHIE_BLOCK_ENTITY,
                     TangotekPlushieBlockEntity::tick);
         }
     };
@@ -2113,7 +2116,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, VINTAGEBEEF_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, VINTAGEBEEF_PLUSHIE_BLOCK_ENTITY,
                     VintagebeefPlushieBlockEntity::tick);
         }
     };
@@ -2125,7 +2128,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, XBCRAFTED_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, XBCRAFTED_PLUSHIE_BLOCK_ENTITY,
                     XbcraftedPlushieBlockEntity::tick);
         }
     };
@@ -2137,7 +2140,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, XISUMA_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, XISUMA_PLUSHIE_BLOCK_ENTITY,
                     XisumaPlushieBlockEntity::tick);
         }
     };
@@ -2149,7 +2152,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, YAHIAMICE_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, YAHIAMICE_PLUSHIE_BLOCK_ENTITY,
                     YahiamicePlushieBlockEntity::tick);
         }
     };
@@ -2161,7 +2164,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ZEDAPH_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ZEDAPH_PLUSHIE_BLOCK_ENTITY,
                     ZedaphPlushieBlockEntity::tick);
         }
     };
@@ -2173,7 +2176,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, ZOMBIECLEO_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, ZOMBIECLEO_PLUSHIE_BLOCK_ENTITY,
                     ZombiecleoPlushieBlockEntity::tick);
         }
     };
@@ -2185,7 +2188,7 @@ public class BlockRegistry {
         @Nullable
         @Override
         public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-            return validateTicker(type, DOUBLEAzerosix_PLUSHIE_BLOCK_ENTITY,
+            return checkType(type, DOUBLEAzerosix_PLUSHIE_BLOCK_ENTITY,
                     DoubleazerosixPlushieBlockEntity::tick);
         }
     }; //this comment is autogenerated

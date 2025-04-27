@@ -1,9 +1,6 @@
 package net.plushified.block;
 
-import com.mojang.serialization.MapCodec;
 import io.netty.util.internal.ThreadLocalRandom;
-import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
-import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
@@ -14,7 +11,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Util;
+import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -22,11 +19,7 @@ import net.minecraft.util.shape.*;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.plushified.util.shape.CustomSimpleVoxelShape;
-import net.plushified.util.shape.ShapeUtils;
-import net.plushified.util.shape.CustomArrayVoxelShape;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 import static net.plushified.registry.SoundEventRegistry.*;
@@ -64,11 +57,6 @@ public abstract class Plushie extends BlockWithEntity implements Waterloggable, 
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
-        return null;
-    }
-
-    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING, WATERLOGGED);
     }
@@ -95,7 +83,7 @@ public abstract class Plushie extends BlockWithEntity implements Waterloggable, 
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             world.playSound(null, pos, PLUSHIE_PAT_SOUND_EVENT, SoundCategory.BLOCKS, 1f, (float) ThreadLocalRandom.current().nextInt(9, 11 + 1) /10);
         }

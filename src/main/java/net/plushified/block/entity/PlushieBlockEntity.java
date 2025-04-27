@@ -13,8 +13,10 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import static net.plushified.registry.BlockEntityRegistry.*;
@@ -32,16 +34,16 @@ public class PlushieBlockEntity extends BlockEntity implements GeoBlockEntity {
     }
 
     @Override
-    public void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup wrapper) {
+    public void writeNbt(NbtCompound nbt) {
         // Save the current value of the number to the nbt
         nbt.putBoolean("haunted", haunted);
 
-        super.writeNbt(nbt, wrapper);
+        super.writeNbt(nbt);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup wrapper) {
-        super.readNbt(nbt, wrapper);
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
 
         haunted = nbt.getBoolean("haunted");
     }
