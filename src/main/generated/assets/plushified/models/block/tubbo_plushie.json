@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/tubbo_plushie",
+    "all": "plushified:block/tubbo_plushie",
+    "particle": "plushified:block/tubbo_plushie"
+  }
+}

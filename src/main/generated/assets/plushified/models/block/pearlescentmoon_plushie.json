@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/pearlescentmoon_plushie",
+    "all": "plushified:block/pearlescentmoon_plushie",
+    "particle": "plushified:block/pearlescentmoon_plushie"
+  }
+}

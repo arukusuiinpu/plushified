@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/dushenka__plushie",
+    "all": "plushified:block/dushenka__plushie",
+    "particle": "plushified:block/dushenka__plushie"
+  }
+}

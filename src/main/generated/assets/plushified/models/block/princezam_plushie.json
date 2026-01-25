@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/princezam_plushie",
+    "all": "plushified:block/princezam_plushie",
+    "particle": "plushified:block/princezam_plushie"
+  }
+}

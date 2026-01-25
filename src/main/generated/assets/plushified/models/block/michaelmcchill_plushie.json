@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/michaelmcchill_plushie",
+    "all": "plushified:block/michaelmcchill_plushie",
+    "particle": "plushified:block/michaelmcchill_plushie"
+  }
+}

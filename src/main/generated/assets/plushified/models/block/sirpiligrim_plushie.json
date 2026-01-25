@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/sirpiligrim_plushie",
+    "all": "plushified:block/sirpiligrim_plushie",
+    "particle": "plushified:block/sirpiligrim_plushie"
+  }
+}

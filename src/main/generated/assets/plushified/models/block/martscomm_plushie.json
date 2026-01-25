@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/martscomm_plushie",
+    "all": "plushified:block/martscomm_plushie",
+    "particle": "plushified:block/martscomm_plushie"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/hannahxxrose_plushie",
+    "all": "plushified:block/hannahxxrose_plushie",
+    "particle": "plushified:block/hannahxxrose_plushie"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/eightsidedsquare_plushie",
+    "all": "plushified:block/eightsidedsquare_plushie",
+    "particle": "plushified:block/eightsidedsquare_plushie"
+  }
+}

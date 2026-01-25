@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/chiefxd_plushie",
+    "all": "plushified:block/chiefxd_plushie",
+    "particle": "plushified:block/chiefxd_plushie"
+  }
+}

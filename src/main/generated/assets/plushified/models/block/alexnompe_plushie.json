@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "textures": {
+    "all": "plushified:block/alexnompe_plushie",
+    "particle": "plushified:block/alexnompe_plushie",
+    "0": "plushified:block/alexnompe_plushie"
+  },
+  "render_type": "translusent"
+}

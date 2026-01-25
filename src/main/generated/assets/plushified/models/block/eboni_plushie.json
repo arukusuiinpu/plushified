@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/eboni_plushie",
+    "all": "plushified:block/eboni_plushie",
+    "particle": "plushified:block/eboni_plushie"
+  }
+}

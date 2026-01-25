@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/resota_plushie",
+    "all": "plushified:block/resota_plushie",
+    "particle": "plushified:block/resota_plushie"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/checkgoodman_plushie",
+    "all": "plushified:block/checkgoodman_plushie",
+    "particle": "plushified:block/checkgoodman_plushie"
+  }
+}

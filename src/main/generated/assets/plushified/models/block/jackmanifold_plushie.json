@@ -1,0 +1,9 @@
+{
+  "parent": "plushified:custom/plushie",
+  "render_type": "translusent",
+  "textures": {
+    "0": "plushified:block/jackmanifold_plushie",
+    "all": "plushified:block/jackmanifold_plushie",
+    "particle": "plushified:block/jackmanifold_plushie"
+  }
+}

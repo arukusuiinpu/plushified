@@ -180,5 +180,10 @@
   "block.plushified.zmeevig_plushie": "Zmeevig plushie",
   "block.plushified.zombiecleo_plushie": "Zombiecleo plushie",
   "itemGroup.plushified.plushies": "Plushies",
-  "subtitles.plushified.plushie_pat_sound": "Plushie squeak"
+  "subtitles.plushified.plushie_pat_sound": "Plushie squeak",
+  "text.config.plushified.category.general": "General",
+  "text.config.plushified.category.general.@Tooltip": "General",
+  "text.config.plushified.option.lootTables": "Loot Tables",
+  "text.config.plushified.option.plushies": "Plushies",
+  "text.config.plushified.title": "Plushified"
 }
