@@ -19,7 +19,7 @@ public class PlushifiedClient implements ClientModInitializer {
         PLUSHIES.forEach((id, plushie) -> {
             BlockRenderLayerMap.INSTANCE.putBlock(plushie, RenderLayer.getTranslucent());
 
-            BlockEntityRendererFactories.register(plushie.PLUSHIE_BLOCK_ENTITY,
+            BlockEntityRendererFactories.register(plushie.PLUSHIE_BLOCK_ENTITY_TYPE,
                     context -> new PlushieRenderer(id.id));
         });
     }

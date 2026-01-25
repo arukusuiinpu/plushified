@@ -184,7 +184,7 @@ public class PlushifiedConfig {
         add(PlushieID.of("Spokeishere", "spokeishere_plushie"));
         add(PlushieID.of("Squiddo", "squiddo_plushie"));
         add(PlushieID.of("Stalin", "stalin_plushie"));
-        add(PlushieID.of("Stressmonsteronezeroone", "stressmonster101_plushie"));
+        add(PlushieID.of("Stressmonster101", "stressmonster101_plushie"));
         add(PlushieID.of("Talon", "talon_plushie"));
         add(PlushieID.of("Tangotek", "tangotek_plushie"));
         add(PlushieID.of("Techno", "techno_plushie"));

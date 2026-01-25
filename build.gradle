@@ -79,6 +79,7 @@ dependencies {
     modImplementation "dev.architectury:architectury:${project.architectury_api_version}"
 
     implementation "norivensuu:iinpulib:${project.iinpulib_version}"
+    include "norivensuu:iinpulib:${project.iinpulib_version}"
 
     modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 

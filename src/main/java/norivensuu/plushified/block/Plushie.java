@@ -9,6 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -23,6 +24,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import norivensuu.plushified.block.entity.PlushieBlockEntity;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.animatable.GeoItem;
 
 import java.util.Objects;
 
@@ -33,17 +36,17 @@ public class Plushie extends BlockWithEntity implements Waterloggable, BlockEnti
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public BlockEntityType<PlushieBlockEntity> PLUSHIE_BLOCK_ENTITY;
+    public BlockEntityType<PlushieBlockEntity> PLUSHIE_BLOCK_ENTITY_TYPE;
 
     public Plushie(Settings settings) {
         super(settings);
         setDefaultState(getDefaultState()
                 .with(Properties.HORIZONTAL_FACING, Direction.NORTH)
                 .with(WATERLOGGED, false));
-        PLUSHIE_BLOCK_ENTITY = BlockEntityType.Builder.create(this::getBlockEntity, this).build();
+        PLUSHIE_BLOCK_ENTITY_TYPE = BlockEntityType.Builder.create(this::initializeBlockEntity, this).build();
     }
 
-    public PlushieBlockEntity getBlockEntity(BlockPos pos, BlockState state) {
+    public PlushieBlockEntity initializeBlockEntity(BlockPos pos, BlockState state) {
         return new PlushieBlockEntity(this, pos, state);
     }
 
@@ -101,13 +104,14 @@ public class Plushie extends BlockWithEntity implements Waterloggable, BlockEnti
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient) {
-            world.playSound(null, pos, PLUSHIE_PAT_SOUND_EVENT, SoundCategory.BLOCKS, 1f, (float) ThreadLocalRandom.current().nextInt(9, 11 + 1) /10);
+            world.playSound(null, pos, PLUSHIE_PAT_SOUND_EVENT, SoundCategory.BLOCKS, 1f, (float) ThreadLocalRandom.current().nextInt(9, 11 + 1) / 10);
+            ((PlushieBlockEntity) world.getBlockEntity(pos)).triggerAnim("controller", "pat");
         }
         return ActionResult.SUCCESS;
     }
 
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return getBlockEntity(pos, state);
+        return new PlushieBlockEntity(this, pos, state);
     }
 }

@@ -13,7 +13,7 @@ public class BlockEntityRegistry implements ConditionalInitializer {
         PLUSHIES.forEach((id, plushie) ->
                 Registry.register(Registries.BLOCK_ENTITY_TYPE,
                         Identifier.of(Plushified.MOD_ID, id.id.getPath()+"_block_entity"),
-                        plushie.PLUSHIE_BLOCK_ENTITY));
+                        plushie.PLUSHIE_BLOCK_ENTITY_TYPE));
 
     }
 }

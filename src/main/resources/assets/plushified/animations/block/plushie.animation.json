@@ -4,6 +4,24 @@
 		"animation.plushie.idle": {
 			"loop": true,
 			"animation_length": 0.0417
+		},
+		"animation.plushie.pat": {
+			"animation_length": 0.1667,
+			"override_previous_animation": true,
+			"anim_time_update": 0,
+			"blend_weight": 1,
+			"start_delay": 0,
+			"bones": {
+				"body": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [1.09036, 0.90312, 1.09036],
+						"0.0833": [1.1, 0.9, 1.1],
+						"0.125": [1.0379, 0.97515, 1.0379],
+						"0.1667": [1, 1, 1]
+					}
+				}
+			}
 		}
 	}
 }
